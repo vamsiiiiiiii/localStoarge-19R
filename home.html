@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <nav>
+        <a href="home.html">Home</a> 
+        <a href="" onclick="eus()">ExploreUs</a>
+        <a href="products.html">Products</a>
+    </nav>
+    <h1>Welcome to the Home Page!</h1>
+
+    <script>
+        function eus()
+{
+    open('https://www.wikipedia.org')
+}        // Redirect to login if not logged in
+        if (localStorage.getItem("isLoggedIn") !== "true") {
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>

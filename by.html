@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Now</title>
+</head>
+<body>
+    <nav>
+        <a href="home.html">Home</a> |
+        <a href="products.html">Products</a>
+    </nav>
+
+    <h1>Buy Now Page</h1>
+    <p>Thank you for choosing our product!</p>
+
+    <script>
+
+
+
+
+        // Redirect to login if not logged in
+        if (localStorage.getItem("isLoggedIn") !== "true") {
+            window.location.assign("login.html")
+        }else{
+            navigator.geolocation.getCurrentPosition(
+    (position) => {
+        console.log("Latitude:", position.coords.latitude);
+        console.log("Longitude:", position.coords.longitude);
+    },
+    (error) => {
+        console.error("Error getting location:", error.message);
+    }
+);
+        }
+    </script>
+</body>
+</html>

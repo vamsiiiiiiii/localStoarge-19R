@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <form onsubmit="return login(event)">
+        <input type="text" id="name" placeholder="Enter your username" required>
+        <input type="password" id="password" placeholder="Enter your password" required>
+        <button type="submit">Login</button>
+    </form>
+
+    <script>
+
+        let ss=prompt("eneter name here")
+        let kk=prompt("eneter password here")
+        // Set default credentials in localStorage
+        localStorage.setItem("name", ss);
+        localStorage.setItem("password", kk);
+
+        function login(event) {
+            event.preventDefault();
+            let inputN = document.getElementById("name");
+            let inputP = document.getElementById("password");
+            let n = localStorage.getItem("name");
+            let p = localStorage.getItem("password");
+
+            if (inputN.value === n && inputP.value === p) {
+                if(screen.width >500){
+                    alert("Successfully logged in");
+                localStorage.setItem("isLoggedIn","true")
+                window.location.href = "home.html"; // Redirect to home.html
+                }else{
+                    alert("you are in large screen size we can let you logged in")
+                }
+            } else {
+                alert("Not logged in! Please check your credentials.");
+            }
+        }
+    </script>
+</body>
+</html>
